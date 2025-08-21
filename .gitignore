@@ -1,0 +1,26 @@
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.h
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Component dependencies
+managed_components/
+dependencies.lock
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
