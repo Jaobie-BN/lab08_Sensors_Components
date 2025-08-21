@@ -6,19 +6,24 @@ extern "C" {
 #endif
 
 /**
- * @brief Initialize sensor module
+ * @brief Initialize sensor module with GPIO
  */
 void sensor_init(void);
 
 /**
- * @brief Read data from sensors
+ * @brief Read temperature data
  */
-void sensor_read_data(void);
+float sensor_read_temperature(void);
 
 /**
- * @brief Check sensor status
+ * @brief Read humidity data
  */
-void sensor_check_status(void);
+float sensor_read_humidity(void);
+
+/**
+ * @brief Read all sensor data and display
+ */
+void sensor_read_all_data(void);
 
 #ifdef __cplusplus
 }
