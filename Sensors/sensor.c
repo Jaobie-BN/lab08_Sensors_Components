@@ -1,30 +1,29 @@
 #include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "esp_log.h"
 #include "sensor.h"
+#include "esp_log.h"
 
-static const char *TAG = "LAB7-2";
+static const char *TAG = "SENSOR";
 
-void app_main(void)
-{
-    ESP_LOGI(TAG, "🚀 Lab 7-2: Managed Component from GitHub URL Demo Started");
-    ESP_LOGI(TAG, "📥 Using Sensors component from: https://github.com/APPLICATIONS-OF-MICROCONTROLLERS/Lab7_Components");
-    
-    // เรียกใช้ฟังก์ชันจาก managed component (GitHub)
-    sensor_init();
-    
-    int reading_count = 0;
-    
-    while(1) {
-        reading_count++;
-        ESP_LOGI(TAG, "📋 Reading #%d from GitHub Component", reading_count);
-        
-        sensor_read_data();
-        sensor_check_status();
-        
-        ESP_LOGI(TAG, "� Component Source: GitHub Repository");
-        ESP_LOGI(TAG, "==========================================");
-        vTaskDelay(pdMS_TO_TICKS(4000));
+void sensor_init(void) {
+    ESP_LOGI(TAG, "Sensor module initialized ✅");
+    // TODO: ใส่โค้ด initialize sensor hardware ที่นี่ (เช่น I2C, ADC)
+}
+
+void sensor_read_data(void) {
+    ESP_LOGI(TAG, "Reading sensor data...");
+    // TODO: ใส่โค้ดอ่านค่าจริงจาก sensor ที่นี่
+    int value = 42; // ตัวอย่างค่า mock
+    ESP_LOGI(TAG, "Sensor value: %d", value);
+}
+
+void sensor_check_status(void) {
+    ESP_LOGI(TAG, "Checking sensor status...");
+    // TODO: ใส่โค้ดตรวจสอบสถานะ sensor ที่นี่
+    // เช่น เช็คค่าเกิน threshold หรือ error state
+    bool status_ok = true; // mock result
+    if (status_ok) {
+        ESP_LOGI(TAG, "Sensor status: OK ✅");
+    } else {
+        ESP_LOGW(TAG, "Sensor status: WARNING ⚠️");
     }
 }
